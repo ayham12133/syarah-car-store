@@ -63,7 +63,21 @@ A comprehensive car dealership management system built with Yii2 Advanced Projec
    php yii queue/listen
    ```
 
-7. **Access applications**
+7. **Configure Apache for image uploads** (if using Apache)
+   
+   Add to your Apache configuration or `.htaccess`:
+   ```apache
+   Alias /uploads "C:/xampp/htdocs/yii2CarStore/common/web/uploads"
+   <Directory "C:/xampp/htdocs/yii2CarStore/common/web/uploads">
+       Options Indexes FollowSymLinks
+       AllowOverride All
+       Require all granted
+   </Directory>
+   ```
+   
+   **For XAMPP users:** Add this to `httpd.conf` or create a virtual host configuration.
+
+8. **Access applications**
    - Storefront: `http://localhost/yii2CarStore/storefront/web/`
    - Dashboard: `http://localhost/yii2CarStore/dashboard/web/`
 
@@ -149,7 +163,17 @@ openssl rand -base64 32
 
 3. **Images not displaying**
    ```bash
+   # Check file permissions
    chmod -R 755 common/web/uploads
+   
+   # For Apache/XAMPP, ensure alias is configured:
+   # Add to httpd.conf or virtual host:
+   # Alias /uploads "C:/xampp/htdocs/yii2CarStore/common/web/uploads"
+   # <Directory "C:/xampp/htdocs/yii2CarStore/common/web/uploads">
+   #     Options Indexes FollowSymLinks
+   #     AllowOverride All
+   #     Require all granted
+   # </Directory>
    ```
 
 4. **Queue not processing**
