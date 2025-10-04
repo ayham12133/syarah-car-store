@@ -115,6 +115,87 @@ yii2CarStore/
 └── vendor/          # Dependencies
 ```
 
+## 🏗️ Code Structure & Design Decisions
+
+### Architecture Overview
+The project follows Yii2 Advanced Project Template architecture with clear separation of concerns:
+
+- **Common**: Shared code between applications (models, configurations, utilities)
+- **Dashboard**: Admin-only interface for system management
+- **Storefront**: Customer-facing application for browsing and purchasing
+- **Console**: Command-line tools for admin user management
+
+### Key Design Decisions
+
+#### 1. **Yii2 Advanced Template**
+- **Why**: Clean separation between frontend and backend applications
+- **Benefit**: Independent deployment, different access controls, scalable architecture
+
+#### 2. **Shared Models in Common**
+- **Why**: Consistency across applications, single source of truth
+- **Implementation**: `User`, `CarListing`, `Order` models in `common/models/`
+- **Benefit**: Data integrity, easier maintenance
+
+#### 3. **Role-Based Access Control**
+- **Why**: Security-first approach for admin functionality
+- **Implementation**: Admin-only dashboard access, console-based admin creation
+- **Benefit**: Prevents unauthorized access, secure admin management
+
+#### 4. **Background Job Processing**
+- **Why**: Heavy operations (CSV export) shouldn't block user interface
+- **Implementation**: Yii2 Queue extension with file-based queue
+- **Benefit**: Better user experience, scalable processing
+
+#### 5. **Image Management System**
+- **Why**: Centralized storage for both applications
+- **Implementation**: Images stored in `common/web/uploads/cars/`
+- **Benefit**: Single storage location, web-accessible URLs
+
+#### 6. **Configuration Templates**
+- **Why**: Easy setup for new developers, security best practices
+- **Implementation**: `.dist` template files, local configs excluded from Git
+- **Benefit**: Quick setup, sensitive data protection
+
+#### 7. **Console Commands for Admin Management**
+- **Why**: Security - admin users only created through secure console
+- **Implementation**: `AdminController` with `actionCreate` command
+- **Benefit**: Prevents web-based privilege escalation
+
+### Database Design
+
+#### Core Tables
+- **`user`**: User accounts with `is_admin` flag for role management
+- **`car_listing`**: Car inventory with JSON image paths
+- **`order`**: Purchase records linking users to cars
+- **`export`**: Background job tracking for CSV exports
+
+#### Relationships
+- User → Orders (one-to-many)
+- CarListing → Orders (one-to-many)
+- Orders link users to purchased cars
+
+### Security Considerations
+
+1. **Admin Access**: Dashboard restricted to admin users only
+2. **Input Validation**: All user inputs validated and sanitized
+3. **File Upload Security**: Restricted file types and sizes
+4. **Configuration Security**: Sensitive data in local files, not in Git
+5. **CSRF Protection**: Built-in Yii2 CSRF protection
+
+### Performance Optimizations
+
+1. **AJAX Filtering**: Real-time search without page reloads
+2. **Image Optimization**: Multiple image support with individual management
+3. **Background Processing**: Heavy operations moved to background jobs
+4. **Database Indexing**: Proper indexes on frequently queried fields
+
+### Scalability Features
+
+1. **Modular Architecture**: Easy to add new features
+2. **Background Jobs**: Can handle increased load
+3. **Centralized Storage**: Shared resources between applications
+4. **Template System**: Easy configuration for different environments
+
 ## 🔧 Configuration
 
 ### Key Configuration Files
