@@ -1,0 +1,4 @@
+ID,Title,Make,Model,Year,Price,Mileage,Description,Status,"Created At","Updated At"
+14,"2019 Audi A4 - Premium Sedan","Audi ","A4 ",2019,27800.00,38000,"Stylish sedan with excellent handling, high-tech interior, and strong performance.",sold,"2025-10-03 16:32:05","2025-10-03 20:57:00"
+15,"2020 Hyundai Elantra - Great Value","Hyundai ","Elantra ",2020,11000.00,150000,"Compact sedan, fuel-efficient, reliable, and affordable choice for daily commuters.",sold,"2025-10-03 16:32:51","2025-10-04 13:55:10"
+22,"Nissan Altima 2018","Nissan ","Altima ",2018,10000.00,183000,"Reliable daily driver, well maintained",sold,"2025-10-04 04:32:33","2025-10-04 13:04:51"

@@ -113,16 +113,16 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <?php
 // Auto-refresh for pending/processing exports
-$pendingExports = Export::find()
-    ->where(['status' => [Export::STATUS_PENDING, Export::STATUS_PROCESSING]])
-    ->count();
+// $pendingExports = Export::find()
+//     ->where(['status' => [Export::STATUS_PENDING, Export::STATUS_PROCESSING]])
+//     ->count();
 
-if ($pendingExports > 0) {
-    $this->registerJs("
-        // Auto-refresh every 5 seconds for pending/processing exports
-        setTimeout(function() {
-            location.reload();
-        }, 5000);
-    ");
-}
+// if ($pendingExports > 0) {
+//     $this->registerJs("
+//         // Auto-refresh every 5 seconds for pending/processing exports
+//         setTimeout(function() {
+//             location.reload();
+//         }, 5000);
+//     ");
+// }
 ?>

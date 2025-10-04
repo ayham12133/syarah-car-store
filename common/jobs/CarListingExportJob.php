@@ -57,6 +57,7 @@ class CarListingExportJob extends BaseObject implements JobInterface
                 ->andFilterWhere(['like', 'model', $searchModel->model])
                 ->andFilterWhere(['like', 'title', $searchModel->title]);
 
+                
             $cars = $query->all();
             $totalRecords = count($cars); // total records in csv
 

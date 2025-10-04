@@ -10,6 +10,7 @@ $(document).ready(function() {
     if ($('#image-uploads-container').length) {
         initImageUpload();
     }
+    
 });
 
 // Image Upload Functionality

@@ -11,6 +11,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
+use common\models\CarListingSearch;
 use storefront\models\PasswordResetRequestForm;
 use storefront\models\ResetPasswordForm;
 use storefront\models\SignupForm;
@@ -76,7 +77,7 @@ class SiteController extends Controller
     public function actionIndex()
     {
         // Load cars data for the home page
-        $searchModel = new \common\models\CarListingSearch();
+        $searchModel = new CarListingSearch();
         
         // Set default filter to show only available cars
         $params = Yii::$app->request->queryParams;

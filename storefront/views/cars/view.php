@@ -7,7 +7,7 @@ use common\models\CarListing;
 /** @var CarListing $model */
 
 $this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Car Inventory', 'url' => ['index']];
+// $this->params['breadcrumbs'][] = ['label' => 'Home', 'url' => ['/site/index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 

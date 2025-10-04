@@ -62,8 +62,7 @@ $this->title = 'Car Store - Quality Cars for Sale';
                                     'class' => 'form-control',
                                     'placeholder' => 'Min Price ($)',
                                     'type' => 'number',
-                                    'min' => '0',
-                                    'step' => '100'
+                                    'min' => '0'
                                 ]) ?>
                             </div>
                             <div class="col-md-2">
@@ -71,8 +70,7 @@ $this->title = 'Car Store - Quality Cars for Sale';
                                     'class' => 'form-control',
                                     'placeholder' => 'Max Price ($)',
                                     'type' => 'number',
-                                    'min' => '0',
-                                    'step' => '100'
+                                    'min' => '0'
                                 ]) ?>
                             </div>
                             <div class="col-md-1">

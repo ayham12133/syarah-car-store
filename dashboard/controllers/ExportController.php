@@ -132,26 +132,6 @@ class ExportController extends Controller
         Yii::$app->session->setFlash('success', 'Export record deleted successfully.');
         return $this->redirect(['index']);
     }
-
-    
-    //ajax endpoint to check export status
-    public function actionStatus($id)
-    {
-        Yii::$app->response->format = Response::FORMAT_JSON;
-        
-        $export = $this->findModel($id);
-        
-        return [
-            'status' => $export->status,
-            'statusLabel' => $export->getStatusLabel(),
-            'statusBadgeClass' => $export->getStatusBadgeClass(),
-            'totalRecords' => $export->total_records,
-            'completedAt' => $export->getFormattedCompletionDate(),
-            'errorMessage' => $export->error_message,
-            'isCompleted' => $export->isCompleted(),
-            'isFailed' => $export->isFailed(),
-        ];
-    }
     
     public function actionView($id)
     {

@@ -19,7 +19,7 @@ class CarListingSearch extends CarListing
     {
         return [
             [['year'], 'integer'],
-            [['make', 'model', 'status'], 'safe'],
+            [['title', 'make', 'model', 'status'], 'safe'],
             [['minPrice', 'maxPrice'], 'number'],
             [['minYear', 'maxYear'], 'integer'],
         ];
@@ -60,7 +60,8 @@ class CarListingSearch extends CarListing
             'status' => $this->status,
         ]);
 
-        $query->andFilterWhere(['like', 'make', $this->make])
+        $query->andFilterWhere(['like', 'title', $this->title])
+            ->andFilterWhere(['like', 'make', $this->make])
             ->andFilterWhere(['like', 'model', $this->model])
             ->andFilterWhere(['>=', 'price', $this->minPrice])
             ->andFilterWhere(['<=', 'price', $this->maxPrice])

@@ -75,14 +75,18 @@ class CarsController extends Controller
             $model->imageFiles = UploadedFile::getInstances($model, 'imageFiles');
 
             if ($model->save()) {
-
-                if ($model->imageFiles && $model->uploadImages()) {
-                    $model->save(false);
-                    Yii::$app->session->setFlash('success', 'Car listing created successfully.');
-                    return $this->redirect(['view', 'id' => $model->id]);
+                if (!empty($model->imageFiles)) {
+                    if ($model->imageFiles && $model->uploadImages()) {
+                        $model->save(false);
+                        Yii::$app->session->setFlash('success', 'Car listing created successfully.');
+                        return $this->redirect(['view', 'id' => $model->id]);
+                    } else {
+                        Yii::info('Image upload failed', 'image-upload');
+                        Yii::$app->session->setFlash('warning', 'Car listing created but some images failed to upload.');
+                        return $this->redirect(['view', 'id' => $model->id]);
+                    }
                 } else {
-                    Yii::info('Image upload failed', 'image-upload');
-                    Yii::$app->session->setFlash('warning', 'Car listing created but some images failed to upload.');
+                    Yii::$app->session->setFlash('success', 'Car listing created successfully.');
                     return $this->redirect(['view', 'id' => $model->id]);
                 }
             } else {
