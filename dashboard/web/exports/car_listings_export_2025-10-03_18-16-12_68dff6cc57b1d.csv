@@ -1,0 +1,5 @@
+ID,Title,Make,Model,Year,Price,Mileage,Description,Status,"Created At","Updated At"
+1,"bmw i7",BMW,i7,2025,20000.00,10000,"bmw i7 full elictric",sold,"2025-10-03 02:11:14","2025-10-03 04:47:30"
+2,"byd 2025",byd,byd,2025,15000.00,0,"byd zero ",available,"2025-10-03 18:13:57","2025-10-03 18:13:57"
+3,"Mercedes AMG",Mercedes,"CS Class ",2021,70000.00,70000,"cs class",available,"2025-10-03 18:14:53","2025-10-03 18:14:53"
+4,Toyota,Toyota,Camre,2021,25000.00,80000,"camre black edition",available,"2025-10-03 18:15:53","2025-10-03 18:15:53"

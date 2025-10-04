@@ -1,0 +1,2 @@
+suite_namespace: dashboard\tests\unit
+actor: UnitTester

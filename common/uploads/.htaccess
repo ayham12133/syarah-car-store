@@ -1,0 +1,20 @@
+# Allow access to uploaded images
+<Files "*.jpg">
+    Order allow,deny
+    Allow from all
+</Files>
+
+<Files "*.jpeg">
+    Order allow,deny
+    Allow from all
+</Files>
+
+<Files "*.png">
+    Order allow,deny
+    Allow from all
+</Files>
+
+<Files "*.gif">
+    Order allow,deny
+    Allow from all
+</Files>

@@ -1,0 +1,90 @@
+# Yii2 Advanced Project Template .gitignore
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Composer
+/vendor/
+composer.phar
+composer.lock
+
+# Yii2 runtime
+/runtime/
+*/runtime/
+
+# Logs
+*.log
+
+# Cache
+/cache/
+*/cache/
+
+# Environment files
+.env
+.env.local
+.env.production
+.env.*
+
+# Database
+*.sqlite
+*.db
+
+# Uploads (optional - uncomment if you don't want to track uploads)
+# /common/web/uploads/
+# /dashboard/web/uploads/
+# /storefront/web/uploads/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Node modules (if using npm/yarn)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build files
+/build/
+/dist/
+
+# Test coverage
+/coverage/
+
+# Backup files
+*.bak
+*.backup
+
+# Local configuration overrides
+/common/config/main-local.php
+/dashboard/config/main-local.php
+/storefront/config/main-local.php
+/console/config/main-local.php
+/common/config/params-local.php
+/dashboard/config/params-local.php
+/storefront/config/params-local.php
+/console/config/params-local.php
+
+# Debug files
+/debug/
+*/debug/
+
+# Queue files (optional - uncomment if you don't want to track queue data)
+# /runtime/queue/
+
+# Mail files
+/runtime/mail/
+*/runtime/mail/
